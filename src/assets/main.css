@@ -1,0 +1,26 @@
+.grid {
+    
+    margin-left: 145px;
+    width: 1230px;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.bigdot{
+    height: 14px;
+    width: 14px;
+    background-color: #ff4655;
+    display: block;
+}
+
+.smalldot{
+    height: 7px;
+    width: 7px;
+    background-color: #ff4655;
+    display: block;
+}
