@@ -5,11 +5,12 @@
 </template>
 
 <script>
-import Body from "../components/HomePage/Body.vue";
-import Header from "../components/Header.vue";
 import Footer from "../components/Footer.vue";
+import Body from "../components/NewsPage/Body.vue";
+import Header from "../components/Header.vue";
+
 export default {
-  name: "Home",
+  name: "News Page",
   components: {
     Body,
     Header,
@@ -17,3 +18,5 @@ export default {
   },
 };
 </script>
+
+<style></style>

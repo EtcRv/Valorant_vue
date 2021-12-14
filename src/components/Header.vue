@@ -1,9 +1,9 @@
 <!-- eslint-disable prettier/prettier -->
 <template>
   <div class="header">
-    <div class="header__logo">
+    <router-link class="header__logo" to="/">
       <img src="../assets/image/HomePage/valorant-logo.png" alt="Logo" />
-    </div>
+    </router-link>
     <div class="header__selection">
       <div class="header__selection-content have-nav">
         <h4>THÔNG TIN TRÒ CHƠI</h4>
@@ -26,9 +26,9 @@
           </li>
         </ul>
       </div>
-      <div class="header__selection-content">
+      <router-link class="header__selection-content" to="/news">
         <h4>TIN TỨC</h4>
-      </div>
+      </router-link>
       <div class="header__selection-content">
         <h4>HỖ TRỢ</h4>
         <i class="fas fa-location-arrow header-icon"></i>
@@ -84,6 +84,7 @@ export default {
 }
 
 .header__selection-content {
+  text-decoration: none;
   cursor: pointer;
   position: relative;
   height: 80px;

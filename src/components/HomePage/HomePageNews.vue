@@ -5,13 +5,18 @@
     <div class="grid">
       <div class="body-web__news-break-new">
         <span class="body-web__news-break-new-title">TIN TỨC MỚI NHẤT</span>
-        <a href="" class="body-web__news-break-new-go">
+        <router-link to="/news" class="body-web__news-break-new-go">
           ĐẾN TRANG TIN TỨC
           <i class="fas fa-arrow-right body-web__news-break-new-go-icon"></i>
-        </a>
+        </router-link>
       </div>
       <div class="body-web__news-break-news-content">
-        <div class="new-content" v-for="breakNew in news" :key="breakNew.title">
+        <div
+          class="new-content"
+          v-for="(breakNew, breakNewIdx) in news"
+          :key="breakNew.title"
+          v-show="breakNewIdx < 3"
+        >
           <img
             :src="
               require('../../assets/image/HomePage/body/news/' + breakNew.src)
@@ -38,32 +43,29 @@ export default {
   name: "Home page News",
   data() {
     return {
-      news: [
-        {
-          title: "Hiện Trạng Về Các Đặc Vụ - Yoru",
-          src: "1.jpg",
-          date: "09/12/21",
-          type: "Đội ngũ phát triển",
-          desc: "Loạt bài viết đặc biệt nhằm giúp bạn tìm hiểu chính xác điều chúng tôi đang làm để giúp đặc vụ Đối Đầu hệ không gian này tìm được chỗ đứng cho mình.",
-        },
-        {
-          title: "VALORANT - Thông Tin Bản Cập Nhật 3.12",
-          src: "2.jpg",
-          date: "07/12/21",
-          type: "Cập nhật trò chơi",
-          desc: "Phím tắt riêng biệt cho mỗi Đặc Vụ. Chỉ vậy thôi.",
-        },
-        {
-          title:
-            "Kiến thức cơ bản về tình trạng bất ổn mạng và trò chơi VALORANT",
-          src: "3.jpg",
-          date: "02/12/21",
-          type: "Cập nhật trò chơi",
-          desc: "Chúng tôi có mặt để giúp bạn hiểu rõ các biểu tượng về tình trạng bất ổn mà đôi khi bạn có thể nhìn thấy trong trò chơi.",
-        },
-      ],
+      news: [],
     };
   },
+  methods: {
+    async getNewsDataFromAPI() {
+      try {
+        let response = await fetch(
+          "https://valorant-ad27c-default-rtdb.asia-southeast1.firebasedatabase.app/News.json"
+        );
+        let datas = await response.json();
+        const keys = Object.keys(datas);
+        keys.forEach((key) => {
+          this.news.push(datas[key]);
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+  created() {
+    this.getNewsDataFromAPI();
+  },
+  computed: {},
 };
 </script>
 

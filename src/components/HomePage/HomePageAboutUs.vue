@@ -31,12 +31,12 @@
               tranh tài trong các chế độ Đấu Xếp Hạng, Đấu Thường, Sinh Tử và
               Spike Thần Tốc.</span
             >
-            <div class="about-us-main-content-link">
+            <div class="about-us-main-content-link" @click="showVideoTeaser()">
               Xem trailer lối chơi tại đây.
             </div>
           </div>
           <div class="about-us-video-trailer">
-            <div class="about-us-video-trailer-img">
+            <div class="about-us-video-trailer-img" @click="showVideoTeaser()">
               <img src="../../assets/image/HomePage/body/news/4.jpg" alt="" />
               <div class="about-us-video-trailer-play">
                 <i class="fas fa-play"></i>
@@ -52,6 +52,11 @@
 <script>
 export default {
   name: "About us",
+  methods: {
+    showVideoTeaser() {
+      this.$store.commit("toggleVideoTeaser");
+    },
+  },
 };
 </script>
 
@@ -235,6 +240,7 @@ export default {
 .about-us-video-trailer-img:hover .about-us-video-trailer-play > i {
   font-size: 28px;
   transition: font-size 0.15s ease-in;
+  cursor: pointer;
 }
 
 .about-us-video-trailer-play::after {

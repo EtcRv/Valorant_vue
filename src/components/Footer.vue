@@ -4,7 +4,7 @@
       <!-- <img src="../assets/image/footer/3.png" />
       <img src="../assets/image/footer/logo_vng.png" /> -->
     </div>
-    <p>Create by <a href="/">Dũng</a></p>
+    <p><a href="/">Dũng</a></p>
   </div>
 </template>
 

@@ -1,7 +1,10 @@
 .grid {
-    
     margin-left: 145px;
     width: 1230px;
+}
+
+.main-bg-color {
+    background-color: #ece8e1;
 }
 
 body {
@@ -24,3 +27,14 @@ body {
     background-color: #ff4655;
     display: block;
 }
+
+.backdrop {
+    z-index: 10000;
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #00000080;
+  }
