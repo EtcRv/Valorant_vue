@@ -1,16 +1,18 @@
 <template>
-  <PlayNow v-show="playNowStatus === 'show'" />
-  <Line />
-  <div class="news-page-bg">
-    <img
-      src="../../assets/image/HomePage/body/trailer/rule.jpg"
-      alt=""
-      class="rule"
-    />
-    <h2 class="news-page__text-bg">
-      <span>VALORANT</span>
-    </h2>
-    <Articles />
+  <div class="News_Page">
+    <Line />
+    <PlayNow v-show="playNowStatus === 'show'" />
+    <div class="news-page-bg">
+      <img
+        src="../../assets/image/HomePage/body/trailer/rule.jpg"
+        alt=""
+        class="rule"
+      />
+      <h2 class="news-page__text-bg">
+        <span>VALORANT</span>
+      </h2>
+      <Articles />
+    </div>
   </div>
 </template>
 
@@ -18,6 +20,7 @@
 import Line from "../HomePage/Line.vue";
 import Articles from "./NewsPageArticle.vue";
 import PlayNow from "../HomePage/PlayNow.vue";
+
 export default {
   name: "News Body",
   components: {
@@ -33,7 +36,7 @@ h2 {
   margin: 0;
 }
 
-.news-page {
+.News_Page {
   position: relative;
 }
 

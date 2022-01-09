@@ -18,7 +18,7 @@
         class="trailer_title"
       />
       <div class="body-web__trailer-content-btn">
-        <span i></span>
+        <!-- <span i></span> -->
         <button class="trailer_btn" @click="showPlayNow()">
           <label class="label_play_for_free">CHƠI MIỄN PHÍ</label>
         </button>
@@ -100,7 +100,6 @@ export default {
   left: -6px;
   right: -6px;
   height: 24px;
-
   background-color: transparent;
   border-top: 0;
   border-bottom: 1px solid rgba(236, 232, 225, 0.5);
